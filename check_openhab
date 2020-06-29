@@ -120,10 +120,10 @@ class Thresholds:
                 return (RC_UNKN, 'Numeric thresholds given for non-numeric state: "%s"' % state)
             rc, message = check_limits(state_float, self.crit_low, self.crit_high, name, RC_CRIT)
             if rc is not None:
-                return (rc, message, perfdata)
+                return (rc, message)
             rc, message = check_limits(state_float, self.warn_low, self.warn_high, name, RC_CRIT)
             if rc is not None:
-                return (rc, message, perfdata)
+                return (rc, message)
 
         if self.time_limits:
             try:
